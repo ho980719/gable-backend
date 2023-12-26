@@ -22,6 +22,10 @@ public class ResponseData<T> {
     return new ResponseData<>(true, data, null);
   }
 
+  public static <T> ResponseData<T> success() {
+    return new ResponseData<>(true, null, null);
+  }
+
 
   public static <T> ResponseData<T> successHeader(T data, HttpHeaders headers) {
     return new ResponseData<>(true, data, null);
