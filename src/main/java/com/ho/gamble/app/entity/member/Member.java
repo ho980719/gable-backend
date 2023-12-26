@@ -22,9 +22,14 @@ public class Member extends BaseEntity {
   @Column(name = "MEMBER_LOGIN_ID", length = 50, nullable = false)
   private String loginId;
 
-  @Column(name = "MEMBER_LOGIN_ID", length = 100, nullable = false)
+  @Column(name = "MEMBER_PASSWORD", length = 100, nullable = false)
   private String password;
 
   @Embedded
+  @AttributeOverrides({
+      @AttributeOverride(name="zipCode", column = @Column(name = "MEMBER_ZIPCODE")),
+      @AttributeOverride(name="address1", column = @Column(name = "MEMBER_ADDRESS1")),
+      @AttributeOverride(name="address2", column = @Column(name = "MEMBER_ADDRESS2"))
+  })
   private Address address;
 }

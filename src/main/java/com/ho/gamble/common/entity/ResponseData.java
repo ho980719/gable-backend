@@ -1,5 +1,6 @@
 package com.ho.gamble.common.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,6 +12,7 @@ import org.springframework.http.HttpHeaders;
 @Setter
 @Builder
 @AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseData<T> {
   private boolean success;
   private T data;
